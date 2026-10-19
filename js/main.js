@@ -165,14 +165,20 @@
     });
   });
 
-  /* Навигация прячется при скролле вниз */
+  /* Навигация прячется при скролле вниз.
+     Переключаем только после заметного сдвига (40px) — иначе на телефоне при появлении
+     адресной строки позиция «дрожит», меню с blur'ом прячется/показывается каждый кадр и скролл лагает */
   const nav = document.getElementById('nav');
-  let lastY = 0;
+  let anchorY = 0, hidden = false;
   ScrollTrigger.create({
     onUpdate: (self) => {
       const y = self.scroll();
-      nav.classList.toggle('is-hidden', y > 300 && y > lastY);
-      lastY = y;
+      if (y <= 300) { anchorY = y; if (hidden) nav.classList.toggle('is-hidden', hidden = false); return; }
+      const d = y - anchorY;
+      if (hidden ? d > 0 : d < 0) { anchorY = y; return; }   // продолжаем в ту же сторону — сдвигаем опору
+      if (Math.abs(d) < 40) return;
+      nav.classList.toggle('is-hidden', hidden = !hidden);
+      anchorY = y;
     },
   });
 

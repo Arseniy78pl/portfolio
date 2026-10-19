@@ -171,6 +171,7 @@ a:hover > .round, a.round:hover { transform: rotate(-45deg); }
   gap: 12px;
   pointer-events: none;
   transition: transform .5s var(--ease), opacity .5s;
+  will-change: transform, opacity;   /* отдельный слой — меню не перерисовывает страницу при выезде */
 }
 .nav > * { pointer-events: auto; }
 .nav.is-hidden { transform: translateY(-140%); opacity: 0; }
