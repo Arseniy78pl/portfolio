@@ -1,0 +1,6 @@
+*.pdf
+.claude/
+CONTEXT.md
+_drafts/
+Исходники/
+IMG_*.jpg
