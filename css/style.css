@@ -433,7 +433,8 @@ html:not(.motion) .cover__meta { color: #fff; }
 .hero-img--light { background: #fff; }
 .hero-img img { display: block; width: 100%; height: auto; transform-origin: 50% 50%; }
 .hero-img__tag { position: absolute; left: 18px; top: 18px; }
-.hero-img--light .hero-img__tag { color: var(--ink); border-color: var(--line); background: rgba(242,242,242,.85); }
+.hero-img--light .hero-img__tag { color: var(--ink); border-color: var(--line); background: #fff; }
+.touch .hero-img--light .hero-img__tag { background: #fff; }
 
 /* Схемы и графика: белый лист, картинка целиком, подпись снизу */
 .grid { display: grid; gap: var(--gap); align-items: start; }
@@ -622,6 +623,8 @@ html.lb-open, html.lb-open body { overflow: hidden; }
   .cover__meta { top: 80px; font-size: 10px; letter-spacing: .1em; }
   .cover__hint { display: none; }
   .cover__title { font-size: 13.6vw; }
+  .cover__caption { bottom: 36px; gap: 12px; }
+  .hero-img--light .hero-img__tag { left: 8px; top: 8px; height: 26px; padding: 0 10px; font-size: 10px; }
   .motion .cover__media { clip-path: inset(28% 8% 34% 8% round 22px); }
   .about { padding: 110px var(--pad) 120px; }
   .about__img--a { top: 70px; right: 6%; }

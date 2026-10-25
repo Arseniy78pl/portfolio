@@ -194,16 +194,19 @@
   gsap.from('.cover__media', { scale: 0.85, opacity: 0, duration: 1.6, ease: 'expo.out', delay: 0.35 });
   gsap.from('.cover__meta span, .nav > *', { y: -20, opacity: 0, duration: 1, ease: 'expo.out', stagger: 0.06, delay: 0.5 });
 
-  gsap.timeline({
-    scrollTrigger: { trigger: '#cover', start: 'top top+=10', end: '+=140%', pin: true, scrub: 0.7, invalidateOnRefresh: true },
-  })
+  /* на телефоне — без закрепления и без привязки к скроллу: при прокрутке вверх появляется адресная строка,
+     закреплённая обложка и scrub-анимации из-за этого дёргаются. Обложка раскрывается сама по таймеру. */
+  const coverTl = gsap.timeline(isTouch
+    ? { delay: 1.5, defaults: { duration: 1.1 } }
+    : { scrollTrigger: { trigger: '#cover', start: 'top top+=10', end: '+=140%', pin: true, scrub: 0.7, invalidateOnRefresh: true } });
+  coverTl
     .fromTo('.cover__media',
       { clipPath: () => (innerWidth < 760 ? 'inset(28% 8% 34% 8% round 22px)' : 'inset(26% 30% 30% 30% round 28px)') },
       { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'power2.inOut' }, 0)
     .to('.cover__title', { yPercent: 60, opacity: 0, ease: 'power1.in' }, 0)
     .to('.cover__meta, .cover__hint', { opacity: 0, duration: 0.3 }, 0)
-    .to('.cover__caption', { opacity: 1, duration: 0.35 }, 0.6)
-    .from('.cover__caption > *', { y: 40, stagger: 0.08, duration: 0.35 }, 0.6);
+    .to('.cover__caption', { opacity: 1, duration: 0.35 }, isTouch ? 0.7 : 0.6)
+    .from('.cover__caption > *', { y: 40, stagger: 0.08, duration: 0.35 }, isTouch ? 0.7 : 0.6);
 
   /* ── 2. Обо мне: слова проявляются из серого в чёрный ── */
   const wordsEl = document.querySelector('.js-words');   // блок «Привет» может быть убран
@@ -282,7 +285,9 @@
 
   /* ── Главы: огромная цифра и заголовок (одна анимация — без конфликтов) ── */
   document.querySelectorAll('.chapter').forEach((ch) => {
-    gsap.timeline({ scrollTrigger: { trigger: ch, start: 'top 85%', end: 'top 25%', scrub: 1 } })
+    gsap.timeline(isTouch
+      ? { scrollTrigger: { trigger: ch, start: 'top 80%', once: true }, defaults: { duration: 0.9, ease: 'expo.out' } }
+      : { scrollTrigger: { trigger: ch, start: 'top 85%', end: 'top 25%', scrub: 1 } })
       .fromTo(ch.querySelector('.chapter__num'), { y: 120, opacity: 0 }, { y: 0, opacity: 1, ease: 'none' }, 0)
       .fromTo(ch.querySelectorAll('.line > span'), { yPercent: 110 }, { yPercent: 0, stagger: 0.12, ease: 'power2.out' }, 0.15)
       .fromTo(ch.querySelectorAll('.chapter__note, .pill'), { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, 0.35);
@@ -297,7 +302,8 @@
   /* ── Контакты: заголовок ── */
   gsap.fromTo('.contact__title .line > span', { yPercent: 110 }, {
     yPercent: 0, stagger: 0.12, ease: 'power3.out',
-    scrollTrigger: { trigger: '.contact', start: 'top 80%', end: 'top 20%', scrub: 0.8 },
+    duration: isTouch ? 1.1 : undefined,
+    scrollTrigger: isTouch ? { trigger: '.contact', start: 'top 80%', once: true } : { trigger: '.contact', start: 'top 80%', end: 'top 20%', scrub: 0.8 },
   });
 
   /* ── Главные картинки проектов: лёгкий въезд, в конце — полное изображение ── */
