@@ -599,6 +599,11 @@ html.lb-open, html.lb-open body { overflow: hidden; }
 
 /* ───────── Телефоны и планшеты: облегчённый режим (цвета и размытие плашек — как на компьютере) ───────── */
 .touch .line > span, .touch .cover__title .ch, .touch .chapter__num { will-change: auto; }
+/* размытие фона на телефоне пересчитывается каждый кадр при скролле (особенно меню, которое выезжает при прокрутке вверх) — заменено плотной подложкой */
+.touch * { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.touch .nav__brand, .touch .nav__links, .touch .nav__cta { background: #ececec; box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+.touch .ph__label, .touch .pair__imgs figure:not(:last-child) figcaption { background: rgba(242,242,242,.96); }
+.touch .pill--glass { background: rgba(20,20,20,.38); }
 
 /* ───────── Адаптив ───────── */
 @media (max-width: 1000px) {
@@ -661,8 +666,8 @@ html.lb-open, html.lb-open body { overflow: hidden; }
 .compare__line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--ink); pointer-events: none; }
 .compare__line i { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font-style: normal; font-size: 18px; }
 .compare__tag { position: absolute; top: 14px; padding: 6px 12px; border-radius: 99px; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; pointer-events: none; }
-.compare__tag--l { left: 14px; background: var(--ink); color: var(--paper); }
-.compare__tag--r { right: 14px; background: rgba(242,242,242,.9); color: var(--ink); border: 1px solid var(--line); }
+.compare__tag--l { left: 14px; background: rgba(242,242,242,.9); color: var(--ink); border: 1px solid var(--line); }
+.compare__tag--r { right: 14px; background: var(--ink); color: var(--paper); }
 .compare__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; -webkit-appearance: none; appearance: none; }
 .compare__range::-webkit-slider-thumb { -webkit-appearance: none; width: 60px; height: 100vh; }
 .compare__range::-moz-range-thumb { width: 60px; height: 100vh; border: 0; }
