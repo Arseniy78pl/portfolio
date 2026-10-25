@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/cover-2560.jpg" imagesrcset="img/cover-1280.jpg 1280w, img/cover-2560.jpg 2560w, img/cover-3840.jpg 3840w" imagesizes="100vw">
-  <link rel="stylesheet" href="css/style.css?v=22">
+  <link rel="stylesheet" href="css/style.css?v=23">
 </head>
 <body>
 
@@ -114,7 +114,7 @@
   <section class="panel bento" id="facts">
     <div class="bento__grid">
       <div class="card card--dark card--stat" data-reveal>
-        <div class="stat"><span data-count="5">5</span> проектов</div>
+        <div class="stat"><span data-count="6">6</span> проектов</div>
         <p>интерьер · ландшафт · жильё</p>
       </div>
       <div class="card card--img ph" data-reveal data-img="img/facts-interior.jpg" data-label="Интерьер"></div>
@@ -134,21 +134,23 @@
   <section class="panel index" id="index">
     <div class="index__head">
       <span class="pill">Проекты</span>
-      <p>Пять работ — от концепции<br>до реализованных объектов</p>
+      <p>Шесть работ — от концепции<br>до реализованных объектов</p>
     </div>
     <ol class="index__list">
       <li><a href="#p01" data-preview="0"><b>01</b><span>Фитнес-клуб концепция</span><em>Дизайн-концепция</em><i>↘</i></a></li>
       <li><a href="#p02" data-preview="1"><b>02</b><span>Фитнес-клуб Крестовский остров</span><em>Проект и реализация</em><i>↘</i></a></li>
-      <li><a href="#p03" data-preview="2"><b>03</b><span>Фитнес-клуб Лен. область</span><em>Проект и реализация</em><i>↘</i></a></li>
-      <li><a href="#p04" data-preview="3"><b>04</b><span>Парк городского значения в Дзержинске</span><em>Благоустройство</em><i>↘</i></a></li>
-      <li><a href="#p05" data-preview="4"><b>05</b><span>Внутридворовое пространство на Фонтанке</span><em>Конкурс · призёр</em><i>↘</i></a></li>
+      <li><a href="#p03" data-preview="2"><b>03</b><span>Квартира в Санкт-Петербурге</span><em>Рабочая документация</em><i>↘</i></a></li>
+      <li><a href="#p04" data-preview="3"><b>04</b><span>Фитнес-клуб Лен. область</span><em>Проект и реализация</em><i>↘</i></a></li>
+      <li><a href="#p05" data-preview="4"><b>05</b><span>Парк городского значения в Дзержинске</span><em>Благоустройство</em><i>↘</i></a></li>
+      <li><a href="#p06" data-preview="5"><b>06</b><span>Внутридворовое пространство на Фонтанке</span><em>Конкурс · призёр</em><i>↘</i></a></li>
     </ol>
     <div class="index__preview" aria-hidden="true">
       <div class="ph ph--dark" data-img="img/01-cover.jpg" data-label="01"></div>
       <div class="ph ph--dark" data-img="img/02-cover.jpg" data-label="02"></div>
-      <div class="ph ph--dark" data-img="img/03-cover.jpg" data-label="03"></div>
-      <div class="ph ph--dark" data-img="img/04-cover.jpg" data-label="04"></div>
-      <div class="ph ph--dark" data-img="img/05-cover.jpg" data-label="05"></div>
+      <div class="ph ph--dark" data-img="img/kv-cover.jpg" data-label="03"></div>
+      <div class="ph ph--dark" data-img="img/03-cover.jpg" data-label="04"></div>
+      <div class="ph ph--dark" data-img="img/04-cover.jpg" data-label="05"></div>
+      <div class="ph ph--dark" data-img="img/05-cover.jpg" data-label="06"></div>
     </div>
   </section>
 
@@ -232,6 +234,89 @@
     <span class="pill pill--onDark">Проект 03</span>
     <div class="chapter__num">03</div>
     <h2 class="chapter__title">
+      <span class="line"><span>Квартира</span></span>
+      <span class="line"><span>рабочие</span></span>
+      <span class="line"><span>чертежи</span></span>
+    </h2>
+    <span class="round round--onDark chapter__arrow">↙</span>
+    <p class="chapter__note">Рабочая документация по&nbsp;дизайн-концепции<br>Санкт-Петербург</p>
+  </section>
+
+  <section class="panel project">
+    <div class="project__intro">
+      <span class="pill">Было → Стало</span>
+      <p class="lead" data-reveal>Перевод дизайн-концепции в&nbsp;рабочие чертежи для&nbsp;строителей: от&nbsp;обмеров квартиры до&nbsp;развёрток каждой стены.</p>
+    </div>
+    <div class="compare" data-reveal style="--pos: 50%; aspect-ratio: 2061 / 2336">
+      <picture><source media="(max-width: 760px)" srcset="img/m/kv-measure.jpg"><img src="img/kv-measure.jpg" width="2061" height="2336" alt="Обмерный план квартиры" loading="lazy" decoding="async"></picture>
+      <div class="compare__top"><picture><source media="(max-width: 760px)" srcset="img/m/kv-furniture.jpg"><img src="img/kv-furniture.jpg" width="2061" height="2336" alt="План с расстановкой мебели" loading="lazy" decoding="async"></picture></div>
+      <span class="compare__line" aria-hidden="true"><i>↔</i></span>
+      <span class="compare__tag compare__tag--l">Стало</span><span class="compare__tag compare__tag--r">Было</span>
+      <input class="compare__range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Сравнение: обмерный план и план с мебелью">
+    </div>
+
+    <div class="project__intro">
+      <span class="pill">Перегородки</span>
+      <p class="lead" data-reveal>Новые перегородки в&nbsp;объёме — чтобы строителям было понятно, что и&nbsp;где возводить.</p>
+    </div>
+    <figure class="fig" data-reveal>
+      <picture><source media="(max-width: 760px)" srcset="img/m/kv-walls-3d.jpg"><img src="img/kv-walls-3d.jpg" width="3700" height="2343" alt="3D-схема монтируемых перегородок" loading="lazy" decoding="async"></picture>
+      <figcaption>План монтируемых перегородок в объёме</figcaption>
+    </figure>
+
+    <div class="project__intro">
+      <span class="pill">Потолок и свет</span>
+      <p class="lead" data-reveal>Уровни потолков, светильники и&nbsp;сценарии освещения сведены в&nbsp;одну систему.</p>
+    </div>
+    <div class="grid grid--2 grid--stretch">
+    <figure class="fig" data-reveal>
+      <picture><source media="(max-width: 760px)" srcset="img/m/kv-ceiling.jpg"><img src="img/kv-ceiling.jpg" width="3572" height="2427" alt="План уровней и покрытия потолка" loading="lazy" decoding="async"></picture>
+      <figcaption>План уровней и покрытия потолка</figcaption>
+    </figure>
+    <figure class="fig" data-reveal>
+      <picture><source media="(max-width: 760px)" srcset="img/m/kv-light.jpg"><img src="img/kv-light.jpg" width="3344" height="2458" alt="План освещения с мебелью" loading="lazy" decoding="async"></picture>
+      <figcaption>План освещения</figcaption>
+    </figure>
+    </div>
+
+    <div class="project__intro">
+      <span class="pill">Развёртки</span>
+      <p class="lead" data-reveal>Каждая стена с&nbsp;размерами, материалами и&nbsp;ведомостью отделки. Рядом&nbsp;— визуализации дизайнера проекта, по&nbsp;которым делались чертежи.</p>
+    </div>
+    <div class="pairs">
+      <article class="pair" data-reveal>
+        <header class="pair__head"><b>01</b><h3>Спальня</h3></header>
+        <div class="renders">
+          <figure><picture><source media="(max-width: 760px)" srcset="img/m/kv-bed-1.jpg"><img src="img/kv-bed-1.jpg" width="938" height="1172" alt="Спальня — визуализация, вид на изголовье" loading="lazy" decoding="async"></picture></figure>
+          <figure><picture><source media="(max-width: 760px)" srcset="img/m/kv-bed-2.jpg"><img src="img/kv-bed-2.jpg" width="938" height="1172" alt="Спальня — визуализация, вид сбоку" loading="lazy" decoding="async"></picture></figure>
+          <figure><picture><source media="(max-width: 760px)" srcset="img/m/kv-bed-3.jpg"><img src="img/kv-bed-3.jpg" width="938" height="1172" alt="Спальня — визуализация, вид у окна" loading="lazy" decoding="async"></picture></figure>
+        </div>
+      <figure class="fig" data-reveal>
+        <picture><source media="(max-width: 760px)" srcset="img/m/kv-bedroom.jpg"><img src="img/kv-bedroom.jpg" width="3714" height="2328" alt="Развёртка стен спальни" loading="lazy" decoding="async"></picture>
+        <figcaption>Развёртка стен: спальня</figcaption>
+      </figure>
+      </article>
+      <article class="pair" data-reveal>
+        <header class="pair__head"><b>02</b><h3>Лоджия</h3></header>
+        <div class="renders renders--4">
+          <figure><picture><source media="(max-width: 760px)" srcset="img/m/kv-loggia-1.jpg"><img src="img/kv-loggia-1.jpg" width="938" height="1172" alt="Лоджия — визуализация, рабочее место" loading="lazy" decoding="async"></picture></figure>
+          <figure><picture><source media="(max-width: 760px)" srcset="img/m/kv-loggia-2.jpg"><img src="img/kv-loggia-2.jpg" width="938" height="1172" alt="Лоджия — визуализация, шкаф-витрина" loading="lazy" decoding="async"></picture></figure>
+          <figure><picture><source media="(max-width: 760px)" srcset="img/m/kv-loggia-3.jpg"><img src="img/kv-loggia-3.jpg" width="938" height="1172" alt="Лоджия — визуализация, вид вдоль окон" loading="lazy" decoding="async"></picture></figure>
+          <figure><picture><source media="(max-width: 760px)" srcset="img/m/kv-loggia-4.jpg"><img src="img/kv-loggia-4.jpg" width="938" height="1172" alt="Лоджия — визуализация, стол и полки" loading="lazy" decoding="async"></picture></figure>
+        </div>
+      <figure class="fig" data-reveal>
+        <picture><source media="(max-width: 760px)" srcset="img/m/kv-loggia.jpg"><img src="img/kv-loggia.jpg" width="3714" height="2458" alt="Развёртка стен лоджии" loading="lazy" decoding="async"></picture>
+        <figcaption>Развёртка стен: лоджия</figcaption>
+      </figure>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═════════ 04 ═════════ -->
+  <section class="panel chapter" id="p04">
+    <span class="pill pill--onDark">Проект 04</span>
+    <div class="chapter__num">04</div>
+    <h2 class="chapter__title">
       <span class="line"><span>Фитнес-клуб</span></span>
       <span class="line"><span>Лен. область</span></span>
     </h2>
@@ -290,10 +375,10 @@
     </div>
   </section>
 
-  <!-- ═════════ 04 ═════════ -->
-  <section class="panel chapter" id="p04">
-    <span class="pill pill--onDark">Проект 04</span>
-    <div class="chapter__num">04</div>
+  <!-- ═════════ 05 ═════════ -->
+  <section class="panel chapter" id="p05">
+    <span class="pill pill--onDark">Проект 05</span>
+    <div class="chapter__num">05</div>
     <h2 class="chapter__title">
       <span class="line"><span>Парк</span></span>
       <span class="line"><span>в Дзержинске</span></span>
@@ -398,10 +483,10 @@
     </div>
   </section>
 
-  <!-- ═════════ 05 ═════════ -->
-  <section class="panel chapter" id="p05">
-    <span class="pill pill--onDark">Проект 05</span>
-    <div class="chapter__num">05</div>
+  <!-- ═════════ 06 ═════════ -->
+  <section class="panel chapter" id="p06">
+    <span class="pill pill--onDark">Проект 06</span>
+    <div class="chapter__num">06</div>
     <h2 class="chapter__title">
       <span class="line"><span>Двор</span></span>
       <span class="line"><span>на Фонтанке</span></span>
@@ -482,6 +567,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="js/main.js?v=10"></script>
+<script src="js/main.js?v=11"></script>
 </body>
 </html>

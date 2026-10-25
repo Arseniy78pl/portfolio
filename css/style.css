@@ -654,6 +654,29 @@ html.lb-open, html.lb-open body { overflow: hidden; }
   .cv__edu, .job__dl { grid-template-columns: 1fr; }
 }
 
+/* before/after slider */
+.compare { position: relative; width: min(100%, 980px); margin: 0 auto; border-radius: var(--r-card); overflow: hidden; background: #fff; user-select: none; }
+.compare img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.compare__top { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.compare__line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--ink); pointer-events: none; }
+.compare__line i { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font-style: normal; font-size: 18px; }
+.compare__tag { position: absolute; top: 14px; padding: 6px 12px; border-radius: 99px; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; pointer-events: none; }
+.compare__tag--l { left: 14px; background: var(--ink); color: var(--paper); }
+.compare__tag--r { right: 14px; background: rgba(242,242,242,.9); color: var(--ink); border: 1px solid var(--line); }
+.compare__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; -webkit-appearance: none; appearance: none; }
+.compare__range::-webkit-slider-thumb { -webkit-appearance: none; width: 60px; height: 100vh; }
+.compare__range::-moz-range-thumb { width: 60px; height: 100vh; border: 0; }
+
+.renders { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+.renders--4 { grid-template-columns: repeat(4, 1fr); }
+.renders figure { margin: 0; }
+.renders img { display: block; width: 100%; height: auto; border-radius: var(--r-card); background: var(--sage); }
+@media (max-width: 760px) {
+  .renders--4 { grid-template-columns: repeat(2, 1fr); }
+  .renders { gap: 8px; }
+  .compare__line i { width: 36px; height: 36px; margin: -18px 0 0 -18px; font-size: 15px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }

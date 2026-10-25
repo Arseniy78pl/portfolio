@@ -56,7 +56,7 @@
      ещё клик — натуральный размер, ←/→ — соседние, Esc — закрыть
      ───────────────────────────────────────────── */
   (() => {
-    const SEL = '.fig img, .gallery img, .pair__imgs img, .sheet img, .hero-img img, .modules .ph, .gallery .ph, .split__img, .card--img';
+    const SEL = '.fig img, .gallery img, .pair__imgs img, .renders img, .sheet img, .hero-img img, .modules .ph, .gallery .ph, .split__img, .card--img';
     const srcOf = (el) => (el.tagName === 'IMG' ? el.src : el.classList.contains('is-loaded') ? el.dataset.img : null);
     const capOf = (el) => {
       const f = el.closest('figure');
@@ -168,6 +168,11 @@
   /* Навигация прячется при скролле вниз.
      Переключаем только после заметного сдвига (40px) — иначе на телефоне при появлении
      адресной строки позиция «дрожит», меню с blur'ом прячется/показывается каждый кадр и скролл лагает */
+  document.querySelectorAll('.compare').forEach((box) => {
+    const r = box.querySelector('.compare__range');
+    r.addEventListener('input', () => box.style.setProperty('--pos', r.value + '%'));
+  });
+
   const nav = document.getElementById('nav');
   let anchorY = 0, hidden = false;
   ScrollTrigger.create({
